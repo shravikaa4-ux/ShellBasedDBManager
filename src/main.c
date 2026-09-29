@@ -1,32 +1,37 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-#define MAX_INPUT 1024
+#include "../include/dbshell.h"
+#include "../include/input.h"
 
 int main()
 {
-    char input[MAX_INPUT];
+    char *input;
 
     printf("============================================\n");
-    printf("   Shell-Based Database Manager v1.0\n");
+    printf("   %s v%s\n", DBSHELL_NAME, VERSION);
     printf("============================================\n");
 
     while (1)
     {
         printf("dbshell> ");
 
-        if (fgets(input, sizeof(input), stdin) == NULL)
-            break;
-
-        input[strcspn(input, "\n")] = '\0';
+        input = read_line();
 
         if (strcmp(input, "exit") == 0)
         {
+            free(input);
             printf("Exiting Database Manager...\n");
             break;
         }
 
-        printf("Command received: %s\n", input);
+        if (strlen(input) != 0)
+        {
+            printf("Command received: %s\n", input);
+        }
+
+        free(input);
     }
 
     return 0;
