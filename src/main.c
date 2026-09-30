@@ -4,13 +4,16 @@
 
 #include "../include/dbshell.h"
 #include "../include/input.h"
+#include "../include/parser.h"
 
 int main()
 {
     char *input;
+    char **tokens;
+    int i;
 
     printf("============================================\n");
-    printf("   %s v%s\n", DBSHELL_NAME, VERSION);
+    printf("   %s v3.0\n", DBSHELL_NAME);
     printf("============================================\n");
 
     while (1)
@@ -28,7 +31,16 @@ int main()
 
         if (strlen(input) != 0)
         {
-            printf("Command received: %s\n", input);
+            tokens = parse_line(input);
+
+            printf("Parsed Tokens\n");
+
+            for (i = 0; tokens[i] != NULL; i++)
+            {
+                printf("argv[%d] = %s\n", i, tokens[i]);
+            }
+
+            free_tokens(tokens);
         }
 
         free(input);
