@@ -67,3 +67,11 @@ make run
 - getenv() support
 - chdir() support
 - getcwd() support
+
+## Week 6 Features
+
+- Signal handling
+- SIGINT support
+- SIGCHLD support
+- Zombie cleanup
+- Shell survives Ctrl+C

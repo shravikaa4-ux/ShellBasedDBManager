@@ -7,14 +7,17 @@
 #include "../include/parser.h"
 #include "../include/process.h"
 #include "../include/builtin.h"
+#include "../include/signals.h"
 
 int main()
 {
+    initialize_signals();
+
     char *input;
     char **tokens;
 
     printf("============================================\n");
-    printf("   %s v5.0\n", DBSHELL_NAME);
+    printf("   %s v6.0\n", DBSHELL_NAME);
     printf("============================================\n");
 
     while (1)
