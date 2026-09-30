@@ -54,3 +54,16 @@ make run
 - Error handling using perror()
 - Execution of real Linux commands
 - Process management integrated with the shell
+
+## Week 5 Features
+
+- Built-in command support
+- cd
+- pwd
+- help
+- clear
+- exit
+- Environment variables
+- getenv() support
+- chdir() support
+- getcwd() support

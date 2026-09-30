@@ -6,6 +6,7 @@
 #include "../include/input.h"
 #include "../include/parser.h"
 #include "../include/process.h"
+#include "../include/builtin.h"
 
 int main()
 {
@@ -13,7 +14,7 @@ int main()
     char **tokens;
 
     printf("============================================\n");
-    printf("   %s v4.0\n", DBSHELL_NAME);
+    printf("   %s v5.0\n", DBSHELL_NAME);
     printf("============================================\n");
 
     while (1)
@@ -22,18 +23,14 @@ int main()
 
         input = read_line();
 
-        if (strcmp(input, "exit") == 0)
-        {
-            free(input);
-            printf("Exiting Database Manager...\n");
-            break;
-        }
-
         if (strlen(input) != 0)
         {
             tokens = parse_line(input);
 
-            execute(tokens);
+            if (execute_builtin(tokens) == 0)
+            {
+                execute(tokens);
+            }
 
             free_tokens(tokens);
         }
