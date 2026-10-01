@@ -20,7 +20,11 @@ $(TARGET): $(SRC)
 run:
 	./$(TARGET)
 
+asan:
+	mkdir -p bin
+	$(CC) $(CFLAGS) -fsanitize=address $(SRC) -o $(TARGET)
+
 clean:
 	rm -rf bin/*
 
-.PHONY: all run clean
+.PHONY: all run asan clean
