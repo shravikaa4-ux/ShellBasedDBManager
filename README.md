@@ -91,3 +91,24 @@ make run
 - AddressSanitizer support
 - Defensive programming practices
 - Improved error handling
+
+## Week 9 Features
+
+- Input redirection using `<`
+- Output redirection using `>`
+- File handling using open()
+- File descriptor duplication using dup2()
+- Child-process based redirection
+- Error handling for missing input/output files
+- Redirection integrated with the shell
+- Pipe functionality preserved alongside redirection
+
+## Week 10 Features
+
+- POSIX thread support
+- Thread creation using pthread_create()
+- Background monitoring thread
+- Thread detachment using pthread_detach()
+- Periodic shell status monitoring
+- POSIX threads integrated with the shell
+- pthread linking using `-pthread`
