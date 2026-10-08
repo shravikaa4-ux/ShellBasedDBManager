@@ -9,6 +9,7 @@ SRC = src/main.c \
       src/builtin.c \
       src/signals.c \
       src/pipes.c \
+      src/redirect.c \
       src/thread.c
 
 TARGET = bin/dbmanager
